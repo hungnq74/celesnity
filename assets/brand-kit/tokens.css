@@ -1,0 +1,26 @@
+:root {
+  color-scheme: light;
+
+  /* Approved brand colors */
+  --csn-color-flight: #093dcc;
+  --csn-color-pulse: #d8182b;
+  --csn-color-operations: #075b3c;
+  --csn-color-human: #511a8c;
+  --csn-color-frontier: #b66a00;
+  --csn-color-paper: #f6f2e9;
+  --csn-color-paper-raised: #fffdf8;
+  --csn-color-ink: #101319;
+  --csn-color-ink-muted: #62656b;
+  --csn-color-line: #c9c4b8;
+  --csn-color-white: #ffffff;
+
+  /* Approved typography */
+  --csn-type-family: "Inter", Arial, sans-serif;
+  --csn-type-weight-regular: 400;
+  --csn-type-weight-medium: 500;
+  --csn-type-weight-semibold: 600;
+  --csn-type-weight-bold: 700;
+  --csn-type-leading-body: 1.55;
+  --csn-type-leading-tight: 1.02;
+  --csn-type-tracking-utility: 0.12em;
+}

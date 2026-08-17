@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <pattern id="micro-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M0 .5H28M.5 0V28" stroke="#093DCC" stroke-opacity=".14" stroke-width="1"/>
+      <circle cx="14" cy="14" r="1.4" fill="#093DCC" fill-opacity=".18"/>
+    </pattern>
+    <pattern id="micro-dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#093DCC" fill-opacity=".26"/>
+    </pattern>
+    <path id="flow" d="M-120 430C95 65 285 755 535 322 775-96 967 642 1320 174"/>
+    <path id="counterflow" d="M-160 190C145 620 342-45 628 378 880 752 1042 74 1350 486"/>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#micro-grid)" opacity=".38"/>
+  <rect x="885" width="315" height="800" fill="url(#micro-dots)" opacity=".5"/>
+
+  <g stroke="#093DCC" stroke-width="1" opacity=".35">
+    <use href="#flow" transform="translate(0 -72)"/>
+    <use href="#flow" transform="translate(0 -60)"/>
+    <use href="#flow" transform="translate(0 -48)"/>
+    <use href="#flow" transform="translate(0 -36)"/>
+    <use href="#flow" transform="translate(0 -24)"/>
+    <use href="#flow" transform="translate(0 -12)"/>
+    <use href="#flow"/>
+    <use href="#flow" transform="translate(0 12)"/>
+    <use href="#flow" transform="translate(0 24)"/>
+    <use href="#flow" transform="translate(0 36)"/>
+    <use href="#flow" transform="translate(0 48)"/>
+    <use href="#flow" transform="translate(0 60)"/>
+    <use href="#flow" transform="translate(0 72)"/>
+
+    <use href="#counterflow" transform="translate(0 -54)"/>
+    <use href="#counterflow" transform="translate(0 -42)"/>
+    <use href="#counterflow" transform="translate(0 -30)"/>
+    <use href="#counterflow" transform="translate(0 -18)"/>
+    <use href="#counterflow" transform="translate(0 -6)"/>
+    <use href="#counterflow" transform="translate(0 6)"/>
+    <use href="#counterflow" transform="translate(0 18)"/>
+    <use href="#counterflow" transform="translate(0 30)"/>
+    <use href="#counterflow" transform="translate(0 42)"/>
+    <use href="#counterflow" transform="translate(0 54)"/>
+  </g>
+
+  <g stroke="#093DCC" opacity=".24">
+    <ellipse cx="194" cy="626" rx="164" ry="118"/>
+    <ellipse cx="194" cy="626" rx="150" ry="108"/>
+    <ellipse cx="194" cy="626" rx="136" ry="98"/>
+    <ellipse cx="194" cy="626" rx="122" ry="88"/>
+    <ellipse cx="194" cy="626" rx="108" ry="78"/>
+    <ellipse cx="194" cy="626" rx="94" ry="68"/>
+    <ellipse cx="194" cy="626" rx="80" ry="58"/>
+    <ellipse cx="194" cy="626" rx="66" ry="48"/>
+    <ellipse cx="194" cy="626" rx="52" ry="38"/>
+
+    <ellipse cx="922" cy="188" rx="236" ry="170" transform="rotate(-18 922 188)"/>
+    <ellipse cx="922" cy="188" rx="218" ry="157" transform="rotate(-18 922 188)"/>
+    <ellipse cx="922" cy="188" rx="200" ry="144" transform="rotate(-18 922 188)"/>
+    <ellipse cx="922" cy="188" rx="182" ry="131" transform="rotate(-18 922 188)"/>
+    <ellipse cx="922" cy="188" rx="164" ry="118" transform="rotate(-18 922 188)"/>
+    <ellipse cx="922" cy="188" rx="146" ry="105" transform="rotate(-18 922 188)"/>
+    <ellipse cx="922" cy="188" rx="128" ry="92" transform="rotate(-18 922 188)"/>
+  </g>
+
+  <g stroke="#093DCC" opacity=".5">
+    <circle cx="194" cy="626" r="8"/>
+    <circle cx="194" cy="626" r="2" fill="#093DCC"/>
+    <path d="M150 626h88M194 582v88"/>
+    <circle cx="1044" cy="654" r="28"/>
+    <circle cx="1044" cy="654" r="16"/>
+    <circle cx="1044" cy="654" r="4" fill="#093DCC"/>
+    <path d="M998 654h92M1044 608v92"/>
+  </g>
+
+  <path d="M0 704h82l10-12 11 28 12-48 13 70 11-45 10 20 13-10 12 3 12-13 13 34 11-65 12 96 12-62 13 18 12-8 12 26 12-48 12 34 12-10 12-4 13 24 12-36 12 18 12-5 13 19 12-31 12 12 12-4 12 21 13-39 12 30 12-11 12 5 13-17 12 27 12-43 12 38 12-16 13 9 12-28 12 50 12-35 12 11 13-6 12 22 12-44 12 52 13-28 12 10 12-8 12 27 12-48 13 38 12-17 12 7 12-13 12 26 13-35 12 18 12-5 12 14 13-21 12 11 12-3 12 9h92" stroke="#093DCC" stroke-opacity=".34"/>
+</svg>
