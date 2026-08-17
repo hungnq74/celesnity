@@ -7,6 +7,13 @@
   --csn-color-operations: #075b3c;
   --csn-color-human: #511a8c;
   --csn-color-frontier: #b66a00;
+  /* Flexible vivid expression palette. Use one dominant field per artifact. */
+  --csn-color-hot-pink: #ff2b7a;
+  --csn-color-solar: #ffd400;
+  --csn-color-electric-orange: #ff5a1f;
+  --csn-color-acid-lime: #9bff00;
+  --csn-color-cacao: #6b2a1a;
+  --csn-color-electric-violet: #8b3dff;
   --csn-color-paper: #f6f2e9;
   --csn-color-paper-raised: #fffdf8;
   --csn-color-ink: #101319;
