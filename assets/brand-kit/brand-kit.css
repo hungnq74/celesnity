@@ -1342,6 +1342,55 @@ main {
 .screenprint-splatter { inset: 0; background: radial-gradient(circle at 17% 30%, white 0 2px, transparent 3px), radial-gradient(circle at 38% 65%, white 0 1px, transparent 2px), radial-gradient(circle at 76% 34%, white 0 2px, transparent 3px), radial-gradient(circle at 86% 78%, white 0 1px, transparent 2px); opacity: .72; }
 .screenprint-streaks { inset: 15% -15%; background: repeating-linear-gradient(172deg, transparent 0 12px, rgba(255,255,255,.27) 12px 14px, transparent 14px 25px); transform: rotate(-10deg); mix-blend-mode: screen; }
 
+/* Reference extracts: the poster itself is the source of truth. */
+.language-blueprint .language-swatch {
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(255,255,255,.38) 48.5% 49%, transparent 49.5%),
+    url("images/worlds/world-flight-bird-1024.webp") 82% 12% / 250% auto no-repeat,
+    var(--csn-color-cyanotype-navy);
+  background-blend-mode: screen, screen, normal;
+}
+
+.language-engraving .language-swatch {
+  background:
+    linear-gradient(135deg, rgba(21,75,255,.1), rgba(5,26,86,.08)),
+    url("images/worlds/world-flight-bird-1024.webp") 48% 43% / 155% auto no-repeat,
+    var(--csn-color-cyanotype-blue);
+  background-blend-mode: screen, normal, normal;
+}
+
+.language-waveform .language-swatch {
+  background:
+    linear-gradient(180deg, rgba(5,26,86,.28), rgba(5,26,86,.2)),
+    url("images/worlds/world-flight-bird-1024.webp") 50% 76% / 190% auto no-repeat,
+    #061b5a;
+  background-blend-mode: multiply, screen, normal;
+}
+
+.language-halftone .language-swatch {
+  background:
+    radial-gradient(circle, rgba(255,255,255,.42) 0 1px, transparent 1.8px) 0 0 / 9px 9px,
+    url("images/worlds/world-flight-bird-1024.webp") 88% 22% / 230% auto no-repeat,
+    #f5f8ff;
+  background-blend-mode: multiply, normal, normal;
+}
+
+.language-landscape .language-swatch {
+  background:
+    linear-gradient(180deg, transparent 53%, rgba(5,26,86,.65) 54% 65%, transparent 66%),
+    url("images/worlds/world-flight-bird-1024.webp") 32% 100% / 175% auto no-repeat,
+    var(--csn-color-cyanotype-blue);
+  background-blend-mode: multiply, normal, normal;
+}
+
+.language-screenprint .language-swatch {
+  background:
+    repeating-linear-gradient(168deg, transparent 0 10px, rgba(255,255,255,.23) 10px 12px, transparent 12px 23px),
+    url("images/worlds/world-flight-bird-1024.webp") 14% 57% / 185% auto no-repeat,
+    var(--csn-color-cyanotype-blue);
+  background-blend-mode: screen, normal, normal;
+}
+
 .cyanotype-palette { display: grid; grid-template-columns: minmax(10rem, .7fr) repeat(3, 1fr); gap: .7rem; align-items: stretch; margin-top: 1rem; }
 .cyanotype-label { display: flex; align-items: center; padding: 1rem; color: var(--csn-color-flight); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .cyanotype-chip { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: 1rem; border: 1px solid var(--csn-color-line); font-size: .78rem; }
