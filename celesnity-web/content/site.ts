@@ -1,0 +1,125 @@
+import { buildContactMailto } from '@/lib/mailto'
+
+export type HeroBeat = {
+  id: 'origin' | 'drift' | 'alignment'
+  label: string
+  title: string
+  body?: string
+  artwork: string
+  signals?: readonly string[]
+  cta?: { label: string; href: string }
+}
+
+export type ProductLayer = { title: string; body: string; index: string }
+export type OperatingStep = { title: string; body: string; index: string }
+export type Capability = { title: string; body: string; index: string }
+export type ResearchStep = { title: string; index: string }
+export type TrustPrinciple = { title: string }
+export type Partner = { name: string; href: string; slug: string }
+export type SystemMapContent = {
+  audience: readonly string[]
+  floor: readonly string[]
+  hardware: readonly string[]
+  platform: readonly { label: string; items: readonly string[] }[]
+  research: readonly string[]
+}
+
+export type LandingContent = {
+  nav: readonly { label: string; href: string }[]
+  hero: readonly HeroBeat[]
+  layers: readonly ProductLayer[]
+  systemMap: SystemMapContent
+  scenario: readonly OperatingStep[]
+  capabilities: readonly Capability[]
+  research: readonly ResearchStep[]
+  trust: readonly TrustPrinciple[]
+  partners: readonly Partner[]
+}
+
+export const sectionIds = ['system-map', 'platform', 'hardware', 'research', 'trust', 'network', 'contact'] as const
+
+export const landingContent: LandingContent = {
+  nav: [
+    { label: 'Platform', href: '#platform' },
+    { label: 'Hardware', href: '#hardware' },
+    { label: 'Research', href: '#research' },
+    { label: 'Trust', href: '#trust' },
+  ],
+  hero: [
+    {
+      id: 'origin',
+      label: 'CELESNITY / INDUSTRIAL INTELLIGENCE',
+      title: 'Industrial intelligence for the physical world.',
+      body: 'Every factory is full of signals. Minder turns them into shared direction.',
+      artwork: '/artwork/origin.png',
+      cta: { label: 'See Minder on your floor', href: '#contact' },
+    },
+    {
+      id: 'drift',
+      label: 'THE OPERATION / AS IT IS',
+      title: 'The signal is everywhere. The context is nowhere.',
+      body: 'Critical knowledge is scattered across software, documents and human memory.',
+      artwork: '/artwork/drift.png',
+      signals: ['Machines', 'Materials', 'Systems', 'People', 'Decisions'],
+    },
+    {
+      id: 'alignment',
+      label: 'THE MINDER SYSTEM',
+      title: 'How Minder is built.',
+      artwork: '/artwork/alignment.png',
+    },
+  ],
+  layers: [
+    { index: '01', title: 'Minder Platform', body: 'Shared operating context.' },
+    { index: '02', title: 'Minder Hardware', body: 'Voice, vision and machine signals.' },
+    { index: '03', title: 'Minder Research', body: 'Action-outcome world model.' },
+  ],
+  systemMap: {
+    audience: ['Workers', 'Managers', 'Engineers'],
+    floor: ['People', 'Machines', 'Materials', 'Environment'],
+    hardware: ['Voice', 'Vision', 'Sensors', 'Edge'],
+    platform: [
+      { label: 'Surfaces', items: ['Worker assistant', 'Operations console'] },
+      { label: 'Operating context', items: ['Shared event log', 'Operational graph'] },
+      { label: 'Governed agent loop', items: ['Observe', 'Reason', 'Propose', 'Approve'] },
+    ],
+    research: ['Action–outcome evidence', 'Edge models', 'World model programme'],
+  },
+  scenario: [
+    { index: '01', title: 'Observe', body: 'A signal appears.' },
+    { index: '02', title: 'Decide', body: 'Minder connects the evidence.' },
+    { index: '03', title: 'Act', body: 'People approve. The system learns.' },
+  ],
+  capabilities: [
+    { index: '01', title: 'Plan', body: 'Sequence around constraints.' },
+    { index: '02', title: 'Produce', body: 'Guide and capture work.' },
+    { index: '03', title: 'Move', body: 'Coordinate every handoff.' },
+    { index: '04', title: 'Maintain', body: 'Prepare the right intervention.' },
+    { index: '05', title: 'Inspect', body: 'Connect defects to causes.' },
+    { index: '06', title: 'Monitor', body: 'Make live conditions legible.' },
+    { index: '07', title: 'Protect', body: 'Preserve boundaries and approval.' },
+    { index: '08', title: 'Optimize', body: 'Learn what improves outcomes.' },
+  ],
+  research: [
+    { index: '01', title: 'Events' },
+    { index: '02', title: 'Decisions' },
+    { index: '03', title: 'Outcomes' },
+    { index: '04', title: 'World model' },
+  ],
+  trust: [
+    { title: 'Sources' },
+    { title: 'Permissions' },
+    { title: 'Approvals' },
+    { title: 'Trace' },
+  ],
+  partners: [
+    { name: 'SIHUB', href: 'https://www.sihub.gov.vn/', slug: 'sihub' },
+    { name: 'HUEIDS', href: 'https://hueids.vn/', slug: 'hueids' },
+    { name: 'Silicon Valley Fellowship', href: 'https://www.siliconvalleyfellowship.com/', slug: 'svf' },
+    { name: 'NVIDIA Inception', href: 'https://www.nvidia.com/en-us/startups/', slug: 'nvidia' },
+    { name: 'Barclays Eagle Labs', href: 'https://labs.uk.barclays/', slug: 'barclays' },
+    { name: 'NatWest Accelerator', href: 'https://www.natwest.com/business/business-services/entrepreneur-accelerator.html', slug: 'natwest' },
+  ],
+}
+
+export const contactMailto = buildContactMailto()
