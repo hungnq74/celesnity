@@ -31,7 +31,7 @@ export function IntroSequence() {
     <div className={`intro-sequence ${exiting ? 'is-exiting' : ''}`} aria-hidden="true">
       <Image
         className="intro-sequence-art"
-        src="/artwork-blueprint/intro-field.png"
+        src="/artwork-blueprint/intro-field-natural.png"
         alt=""
         fill
         sizes="100vw"

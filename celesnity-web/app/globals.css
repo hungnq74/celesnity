@@ -122,12 +122,12 @@ html.intro-active body { overflow:hidden; }
   animation:intro-mark-in 1.1s .62s var(--ease) both;
 }
 .intro-sequence-mark img {
-  width:clamp(58px, 6vw, 84px);
+  width:clamp(64px, 6.5vw, 92px);
   height:auto;
   object-fit:contain;
 }
 .intro-sequence-mark span {
-  font-size:clamp(.68rem, .85vw, .84rem);
+  font-size:clamp(.72rem, .9vw, .9rem);
   font-weight:650;
   letter-spacing:.28em;
   text-indent:.28em;
