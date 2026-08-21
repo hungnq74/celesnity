@@ -14,7 +14,13 @@ export type ProductLayer = { title: string; body: string; index: string }
 export type OperatingStep = { title: string; body: string; index: string }
 export type Capability = { title: string; body: string; index: string }
 export type ResearchStep = { title: string; index: string }
-export type TrustPrinciple = { title: string }
+export type ResearchShowcase = {
+  title: string
+  body: string
+  index: string
+  tags: readonly string[]
+  artwork: string
+}
 export type Partner = { name: string; href: string; slug: string }
 export type SystemMapContent = {
   audience: readonly string[]
@@ -32,18 +38,17 @@ export type LandingContent = {
   scenario: readonly OperatingStep[]
   capabilities: readonly Capability[]
   research: readonly ResearchStep[]
-  trust: readonly TrustPrinciple[]
+  researchShowcase: readonly ResearchShowcase[]
   partners: readonly Partner[]
 }
 
-export const sectionIds = ['system-map', 'platform', 'hardware', 'research', 'trust', 'network', 'contact'] as const
+export const sectionIds = ['system-map', 'platform', 'hardware', 'research', 'network', 'contact'] as const
 
 export const landingContent: LandingContent = {
   nav: [
     { label: 'Platform', href: '#platform' },
     { label: 'Hardware', href: '#hardware' },
     { label: 'Research', href: '#research' },
-    { label: 'Trust', href: '#trust' },
   ],
   hero: [
     {
@@ -106,11 +111,28 @@ export const landingContent: LandingContent = {
     { index: '03', title: 'Outcomes' },
     { index: '04', title: 'World model' },
   ],
-  trust: [
-    { title: 'Sources' },
-    { title: 'Permissions' },
-    { title: 'Approvals' },
-    { title: 'Trace' },
+  researchShowcase: [
+    {
+      index: '01 / SIGNALS',
+      title: 'Signal ledger',
+      body: 'Learning how machine state, material movement and worker input become one reliable event stream.',
+      tags: ['Edge models', 'Event log'],
+      artwork: '/artwork-blueprint/research-signal-ledger.png',
+    },
+    {
+      index: '02 / DECISIONS',
+      title: 'Decision field',
+      body: 'Tracing how evidence becomes a proposed action, an approval and a result people can inspect.',
+      tags: ['Human control', 'Causal evidence'],
+      artwork: '/artwork-blueprint/research-decision-field.png',
+    },
+    {
+      index: '03 / OUTCOMES',
+      title: 'World model',
+      body: 'Connecting actions to outcomes across the floor so every intervention makes the next one sharper.',
+      tags: ['Action–outcome', 'Industrial graph'],
+      artwork: '/artwork-blueprint/research-world-model.png',
+    },
   ],
   partners: [
     { name: 'SIHUB', href: 'https://www.sihub.gov.vn/', slug: 'sihub' },

@@ -4,8 +4,15 @@ import { HardwareOrbitMark } from '@/components/hardware-orbit-mark'
 import { HardwareSequenceMotion } from '@/components/hardware-sequence-motion'
 import { MinderSystemMap } from '@/components/minder-system-map'
 import { MotionProvider } from '@/components/motion-provider'
+import { PlatformStoryMotion } from '@/components/platform-story-motion'
 import { SiteHeader } from '@/components/site-header'
 import { contactMailto, landingContent } from '@/content/site'
+
+const platformPhases = [
+  { index: '01', title: 'Prepare', body: 'See the constraints.', items: landingContent.capabilities.slice(0, 2) },
+  { index: '02', title: 'Perform', body: 'Make the handoff legible.', items: landingContent.capabilities.slice(2, 5) },
+  { index: '03', title: 'Learn', body: 'Turn outcomes into leverage.', items: landingContent.capabilities.slice(5) },
+] as const
 
 export default function HomePage() {
   return (
@@ -25,27 +32,57 @@ export default function HomePage() {
               <p>One shared context across people, work, materials, machines and outcomes.</p>
             </div>
 
-            <div className="scenario" data-reveal>
-              <div className="scenario-statement">
-                <p className="utility-label">ONE SHARED EVENT LOG</p>
-                <h3>From floor signal<br />to approved action.</h3>
-                <p>Worker input, machine state, action and outcome stay connected.</p>
+            <div className="platform-story" data-platform-story data-stage="0">
+              <PlatformStoryMotion />
+              <div className="platform-story-intro" data-reveal>
+                <p className="utility-label">ONE SHARED EVENT LOG / LIVE</p>
+                <h3>The floor<br /><em>speaks in events.</em></h3>
+                <p>Minder gathers the signal, keeps the context, and gives people a next move they can trust.</p>
               </div>
-              <ol className="scenario-steps">
-                {landingContent.scenario.map((step) => (
-                  <li key={step.title}>
-                    <span>{step.index}</span>
-                    <div><strong>{step.title}</strong><p>{step.body}</p></div>
-                  </li>
-                ))}
-              </ol>
+              <div className="platform-field" data-reveal aria-label="Minder event field">
+                <div className="platform-field-grid" />
+                <div className="platform-field-contours platform-field-contours--one" />
+                <div className="platform-field-contours platform-field-contours--two" />
+                <div className="platform-field-axis platform-field-axis--horizontal" />
+                <div className="platform-field-axis platform-field-axis--vertical" />
+                <div className="platform-field-beam" />
+                <div className="platform-field-signal"><i /></div>
+                <div className="platform-field-readout" aria-live="polite">
+                  <span>LIVE EVENT / 01</span>
+                  <strong data-platform-readout-title>Signal detected</strong>
+                  <small data-platform-readout-detail>MACHINE STATE / 07:42:19</small>
+                </div>
+                <div className="platform-field-legend">
+                  <span><i className="platform-dot platform-dot--blue" />source</span>
+                  <span><i className="platform-dot platform-dot--orange" />decision</span>
+                </div>
+              </div>
             </div>
 
-            <div className="platform-capabilities">
-              <p className="utility-label" data-reveal>PLATFORM / ONE SYSTEM</p>
-              <div className="capability-rail" data-reveal aria-label="Minder platform capabilities">
-                {landingContent.capabilities.map((capability) => (
-                  <span key={capability.title}>{capability.title}</span>
+            <div className="platform-spectrum" data-reveal>
+              <div className="platform-spectrum-intro">
+                <p className="utility-label">PLATFORM / OPERATING SPECTRUM</p>
+                <h3>One system.<br /><em>Every handoff.</em></h3>
+                <p>From the first constraint to the last outcome, Minder keeps work moving through one shared context.</p>
+              </div>
+              <div className="spectrum-map" aria-label="Minder operating spectrum">
+                <div className="spectrum-map-axis"><span>INPUT</span><i /><span>OUTCOME</span></div>
+                {platformPhases.map((phase) => (
+                  <section className={`spectrum-phase spectrum-phase--${phase.title.toLowerCase()}`} key={phase.title}>
+                    <div className="spectrum-phase-heading">
+                      <span>{phase.index}</span>
+                      <div><strong>{phase.title}</strong><small>{phase.body}</small></div>
+                    </div>
+                    <div className="spectrum-phase-items">
+                      {phase.items.map((capability) => (
+                        <button type="button" key={capability.title} className="spectrum-item">
+                          <span>{capability.index}</span>
+                          <strong>{capability.title}</strong>
+                          <small>{capability.body}</small>
+                        </button>
+                      ))}
+                    </div>
+                  </section>
                 ))}
               </div>
             </div>
@@ -96,29 +133,31 @@ export default function HomePage() {
             <div className="product-heading product-heading--paper" data-reveal>
               <p className="utility-label">03 / RESEARCH PROGRAMME</p>
               <h2>Minder <em>Research</em></h2>
-              <p>Building the evidence for an industrial world model.</p>
+              <p>Building the evidence for an industrial world model — from signal to decision to outcome.</p>
             </div>
 
-            <div className="research-chain" data-reveal aria-label="World model learning sequence">
-              {landingContent.research.map((step) => (
-                <div key={step.title}>
-                  <span>{step.index}</span>
-                  <strong>{step.title}</strong>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="trust" className="trust-strip">
-          <div className="site-frame trust-strip-inner" data-reveal>
-            <div>
-              <p className="utility-label">04 / HUMAN CONTROL</p>
-              <h2>Evidence before action.<br /><em>People remain in control.</em></h2>
-            </div>
-            <div className="trust-rail" aria-label="Trust principles">
-              {landingContent.trust.map((item) => (
-                <span key={item.title}>{item.title}</span>
+            <div className="research-showcase" aria-label="Minder Research work">
+              {landingContent.researchShowcase.map((item) => (
+                <article className="research-card" key={item.title} data-reveal>
+                  <div className="research-card-media">
+                    <Image
+                      src={item.artwork}
+                      alt=""
+                      fill
+                      sizes="(max-width: 820px) 100vw, 33vw"
+                    />
+                    <div className="research-card-wash" />
+                    <span className="research-card-index">{item.index}</span>
+                  </div>
+                  <div className="research-card-caption">
+                    <div className="research-card-tags">
+                      {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                    <a href="#contact">Explore <span aria-hidden="true">↗</span></a>
+                  </div>
+                </article>
               ))}
             </div>
           </div>

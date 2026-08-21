@@ -51,30 +51,32 @@ export function HardwareSequenceMotion() {
         scrollTrigger: {
           trigger: body,
           pin: desktop ? body : false,
-          start: desktop ? 'top 12%' : 'top 78%',
-          end: desktop ? '+=1350' : 'bottom 34%',
-          scrub: 1.05,
+          start: desktop ? 'top 14%' : 'top 78%',
+          end: desktop ? '+=1180' : 'bottom 34%',
+          // Keep the artwork tied closely to the user's scroll. A long numeric
+          // scrub makes a fast wheel gesture land on the blend frame for too long.
+          scrub: 0.45,
           anticipatePin: desktop ? 1 : 0,
+          pinSpacing: true,
           invalidateOnRefresh: true,
-          snap: desktop ? {
-            snapTo: 'labels',
-            duration: { min: 0.45, max: 1.25 },
-            delay: 0.18,
-            ease: 'power2.inOut',
-          } : undefined,
         },
       })
 
       timeline
         .addLabel('sensor', 0)
-        .to({}, { duration: 0.55 })
-        .to(sensorArtwork, { autoAlpha: 0, duration: 0.5 }, 0.55)
-        .to(rings, { autoAlpha: 0, duration: 0.42 }, 0.66)
-        .to(signals, { autoAlpha: 0, duration: 0.42 }, 0.66)
-        .to(orbitArtwork, { autoAlpha: 1, duration: 0.72 }, 0.72)
-        .addLabel('orbit', 1.44)
-        .to(mark, { autoAlpha: 1, scale: 1, rotation: 0, x: 0, y: 0, duration: 0.56 }, 1.44)
-        .to({}, { duration: 0.45 })
+        // Let the user read the original hardware image before anything moves.
+        .to({}, { duration: 0.62 })
+        // Sovereign-style handoff: the first image dissolves before the new
+        // artwork takes over, with a short overlap so there is no hard cut.
+        .to(sensorArtwork, { autoAlpha: 0, duration: 0.42 }, 0.62)
+        .to(rings, { autoAlpha: 0, duration: 0.34 }, 0.72)
+        .to(signals, { autoAlpha: 0, duration: 0.34 }, 0.72)
+        .to(orbitArtwork, { autoAlpha: 1, duration: 0.52 }, 0.82)
+        .addLabel('orbit', 1.34)
+        // Hold the completed state long enough to understand the result
+        // before ScrollTrigger releases the pinned scene.
+        .to(mark, { autoAlpha: 1, scale: 1, rotation: 0, x: 0, y: 0, duration: 0.42 }, 1.34)
+        .to({}, { duration: 0.64 })
 
       cleanup = () => {
         timeline.scrollTrigger?.kill()
