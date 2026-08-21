@@ -1,2 +1,20 @@
+# Local deployment and environment state
 .vercel
 .env*
+.DS_Store
+
+# Independent repositories kept in the same local workspace
+/kasa_mobile/
+/minder-internal-operation/
+/minder-platform-ui/
+/mua-vietnam-web/
+
+# Local Mua Vietnam assets
+/assets/mua-vietnam/
+
+# Local Minder prototypes and their working notes
+/CHANGELOG.md
+/MINDER_PRODUCE_NODE_SCHEMA_ITEM_FLOW_MONITOR_CHECKLIST.md
+/celesnity-minder-produce-prioritization-prototype.html
+/celesnity-minder-prototype.html
+/stage-matrix-qa.html
