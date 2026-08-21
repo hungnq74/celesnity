@@ -139,6 +139,9 @@ export const landingContent: LandingContent = {
     { name: 'NVIDIA Inception', href: 'https://www.nvidia.com/en-us/startups/', slug: 'nvidia' },
     { name: 'Barclays Eagle Labs', href: 'https://labs.uk.barclays/', slug: 'barclays' },
     { name: 'NatWest Accelerator', href: 'https://www.natwest.com/business/business-services/entrepreneur-accelerator.html', slug: 'natwest' },
+    { name: 'Google', href: 'https://cloud.google.com/', slug: 'google' },
+    { name: 'AWS', href: 'https://aws.amazon.com/', slug: 'aws' },
+    { name: 'Cloudflare', href: 'https://www.cloudflare.com/', slug: 'cloudflare' },
   ],
 }
 

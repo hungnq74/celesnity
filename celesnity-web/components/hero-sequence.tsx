@@ -118,7 +118,6 @@ export function HeroSequence() {
             </article>
           ))}
         </div>
-        <div className="hero-index utility-label utility-label--light" aria-hidden="true">01—03 / SCROLL TO ALIGN</div>
       </div>
     </section>
   )

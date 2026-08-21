@@ -122,12 +122,12 @@ html.intro-active body { overflow:hidden; }
   animation:intro-mark-in 1.1s .62s var(--ease) both;
 }
 .intro-sequence-mark img {
-  width:clamp(64px, 6.5vw, 92px);
+  width:clamp(70px, 7vw, 100px);
   height:auto;
   object-fit:contain;
 }
 .intro-sequence-mark span {
-  font-size:clamp(.72rem, .9vw, .9rem);
+  font-size:clamp(.76rem, .95vw, .96rem);
   font-weight:650;
   letter-spacing:.28em;
   text-indent:.28em;
@@ -609,11 +609,12 @@ h2 em { font-weight: 400; }
 .spectrum-map::before { content:""; position:absolute; left:26px; top:44px; bottom:38px; width:2px; background:linear-gradient(var(--cobalt),rgba(39,82,255,.1) 76%,#ff681f); }
 .spectrum-map-axis { position:absolute; right:0; top:0; left:26px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
 .spectrum-map-axis i { flex:1; height:1px; background:linear-gradient(90deg,rgba(39,82,255,.25),rgba(255,104,31,.45)); }
-.spectrum-phase { position:relative; display:grid; grid-template-columns:150px 1fr; gap:22px; padding:18px 0 20px 28px; border-bottom:1px solid var(--line); }
+.spectrum-phase { position:relative; display:grid; grid-template-columns:190px minmax(0,1fr); gap:22px; padding:18px 0 20px 28px; border-bottom:1px solid var(--line); }
 .spectrum-phase::before { content:""; position:absolute; left:-5px; top:27px; width:12px; height:12px; border:2px solid var(--paper); border-radius:50%; background:var(--cobalt); box-shadow:0 0 0 1px var(--cobalt); }
 .spectrum-phase--perform::before { background:#ff681f; box-shadow:0 0 0 1px #ff681f; }
 .spectrum-phase--learn::before { background:var(--ink); box-shadow:0 0 0 1px var(--ink); }
-.spectrum-phase-heading { display:grid; grid-template-columns:28px 1fr; gap:10px; }
+.spectrum-phase-heading { display:grid; grid-template-columns:28px minmax(0,1fr); gap:10px; min-width:0; }
+.spectrum-phase-heading > div { min-width:0; }
 .spectrum-phase-heading strong { display:block; font-family:var(--font-instrument),serif; font-size:clamp(1.8rem,2.8vw,3.4rem); font-weight:400; line-height:.9; }
 .spectrum-phase-heading small { display:block; margin-top:9px; color:var(--muted); font-size:.7rem; line-height:1.35; }
 .spectrum-phase-items { display:flex; flex-wrap:wrap; gap:8px; align-content:start; }
@@ -684,6 +685,12 @@ h2 em { font-weight: 400; }
 .partner-mark--barclays:hover { color:#00aeef; }
 .partner-mark--natwest span { font-size:1.25rem; font-weight:800; }
 .partner-mark--natwest:hover { color:#5a287d; }
+.partner-mark--google span { font-size:1.35rem; font-weight:700; letter-spacing:-.04em; }
+.partner-mark--google:hover { color:#4285f4; }
+.partner-mark--aws span { font-size:1.35rem; font-weight:850; letter-spacing:-.05em; }
+.partner-mark--aws:hover { color:#ff9900; }
+.partner-mark--cloudflare span { font-size:1.08rem; font-weight:750; letter-spacing:-.03em; }
+.partner-mark--cloudflare:hover { color:#f38020; }
 /* Final */
 .final-cta { position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; isolation:isolate; }
 .final-art { z-index:-3; object-fit:cover; object-position:center; }
@@ -877,7 +884,7 @@ h2 em { font-weight: 400; }
   .platform-field { min-height:420px; }
   .platform-spectrum { grid-template-columns:1fr; gap:38px; margin-top:110px; }
   .platform-spectrum-intro { max-width:520px; }
-  .spectrum-phase { grid-template-columns:140px 1fr; }
+  .spectrum-phase { grid-template-columns:175px minmax(0,1fr); }
   .hardware-body { grid-template-columns:1fr; }
   .hardware-visual { min-height:470px; }
   .research-showcase { grid-template-columns:1fr; gap:16px; }
