@@ -38,7 +38,13 @@ export function MotionProvider() {
         ])
         if (disposed) return
         gsap.registerPlugin(ScrollTrigger)
-        const lenis = new Lenis({ lerp: 0.085, smoothWheel: true, syncTouch: false, autoRaf: false })
+        const lenis = new Lenis({
+          lerp: 0.07,
+          wheelMultiplier: 0.92,
+          smoothWheel: true,
+          syncTouch: false,
+          autoRaf: false,
+        })
         const raf = (time: number) => lenis.raf(time * 1000)
         const refresh = () => lenis.resize()
         lenis.on('scroll', ScrollTrigger.update)

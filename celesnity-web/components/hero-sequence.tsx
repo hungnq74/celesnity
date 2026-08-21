@@ -19,11 +19,11 @@ export function HeroSequence() {
       gsap.registerPlugin(ScrollTrigger)
       const frames = section.querySelectorAll<HTMLElement>('[data-hero-frame]')
       const beats = section.querySelectorAll<HTMLElement>('[data-hero-copy]')
-      gsap.set(frames, { scale: 1.035 })
+      gsap.set(frames, { scale: 1.06 })
       gsap.set(frames[0], { opacity: 1, scale: 1 })
       gsap.set([frames[1], frames[2]], { opacity: 0 })
       gsap.set(beats[0], { opacity: 1, y: 0 })
-      gsap.set([beats[1], beats[2]], { opacity: 0, y: 28 })
+      gsap.set([beats[1], beats[2]], { opacity: 0, y: 18 })
 
       const timeline = gsap.timeline({
         defaults: { ease: 'none' },
@@ -31,21 +31,28 @@ export function HeroSequence() {
           trigger: section,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: true,
+          // A small catch-up time removes the one-to-one mechanical feel while
+          // keeping the sequence controlled by the visitor's scroll position.
+          scrub: 0.9,
           invalidateOnRefresh: true,
           onLeave: () => gsap.set(beats[2], { opacity: 1, y: 0 }),
         },
       })
       timeline
-        .to(beats[0], { opacity: 0, y: -20, duration: 0.07 }, 0.2)
-        .to(frames[1], { opacity: 1, scale: 1, duration: 0.12 }, 0.2)
-        .to(frames[0], { scale: 1.06, duration: 0.32 }, 0.2)
-        .to(beats[1], { opacity: 1, y: 0, duration: 0.08 }, 0.3)
-        .to(beats[1], { opacity: 0, y: -20, duration: 0.07 }, 0.49)
-        .to(frames[2], { opacity: 1, scale: 1, duration: 0.12 }, 0.5)
-        .to(frames[1], { scale: 1.055, duration: 0.28 }, 0.5)
-        .to(beats[2], { opacity: 1, y: 0, duration: 0.08 }, 0.6)
-        .to({}, { duration: 0.32 }, 0.68)
+        // Origin holds, then dissolves into Drift. Both frames move at once so
+        // the transition reads as a photographic crossfade rather than a cut.
+        .to(frames[0], { opacity: 0, scale: 1.045, duration: 0.3 }, 0.08)
+        .to(frames[1], { opacity: 1, scale: 1, duration: 0.3 }, 0.1)
+        .to(beats[0], { opacity: 0, y: -12, duration: 0.18 }, 0.12)
+        .to(beats[1], { opacity: 1, y: 0, duration: 0.16 }, 0.28)
+
+        // Drift receives a deliberate reading pause before the second long
+        // dissolve reveals the complete Minder system.
+        .to(frames[1], { opacity: 0, scale: 1.045, duration: 0.3 }, 0.48)
+        .to(frames[2], { opacity: 1, scale: 1, duration: 0.3 }, 0.5)
+        .to(beats[1], { opacity: 0, y: -12, duration: 0.16 }, 0.52)
+        .to(beats[2], { opacity: 1, y: 0, duration: 0.16 }, 0.68)
+        .to({}, { duration: 0.16 }, 0.84)
 
       cleanup = () => {
         timeline.scrollTrigger?.kill()

@@ -159,7 +159,7 @@ h2 em { font-weight: 400; }
 .site-header--paper .header-cta { border-color: rgba(13,20,32,.28); }
 
 /* Hero */
-.hero-sequence { position: relative; height: 235vh; background: var(--night); --pointer-x: 75vw; --pointer-y: 45vh; }
+.hero-sequence { position: relative; height: 500vh; background: var(--night); --pointer-x: 75vw; --pointer-y: 45vh; }
 .hero-stage { position: sticky; top: 0; height: 100svh; min-height: 620px; overflow: hidden; isolation: isolate; }
 .hero-art, .hero-frame, .hero-scrim, .hero-glow, .hero-grain { position: absolute; inset: 0; }
 .hero-frame { opacity: 0; will-change: opacity, transform; }
@@ -767,7 +767,7 @@ h2 em { font-weight: 400; }
   .section-pad { padding-block:95px; }
   .brand-lockup { font-size:.7rem; }
   .brand-mark { width:34px; height:34px; }
-  .hero-sequence { height:240vh; }
+  .hero-sequence { height:360vh; }
   .hero-beat { bottom:62px; }
   .hero-beat h1 { font-size:clamp(3.25rem,15.8vw,5.2rem); }
   .hero-support { margin-bottom:24px; line-height:1.5; }

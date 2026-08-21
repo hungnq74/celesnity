@@ -41,6 +41,24 @@ test('keeps the complete Minder overview readable at the end of the hero', async
   await expect(overview).toContainText('Minder Research')
 })
 
+test('dissolves the first artwork into the second without a hard cut', async ({ page }, testInfo) => {
+  await page.goto('/')
+  await expect(page.locator('html')).toHaveClass(/motion-ready/)
+  const hero = page.locator('.hero-sequence')
+  const heroTravel = await hero.evaluate((section) => (section as HTMLElement).offsetHeight - window.innerHeight)
+  if (testInfo.project.name === 'mobile') {
+    await page.evaluate((distance) => window.scrollTo(0, distance * 0.22), heroTravel)
+  } else {
+    await page.mouse.wheel(0, heroTravel * 0.22)
+  }
+
+  const frames = page.locator('[data-hero-frame]')
+  const opacity = (index: number) => frames.nth(index).evaluate((node) => Number(getComputedStyle(node).opacity))
+  await expect.poll(() => opacity(0)).toBeLessThan(0.8)
+  await expect.poll(() => opacity(0)).toBeGreaterThan(0.2)
+  await expect.poll(() => opacity(1)).toBeGreaterThan(0.15)
+})
+
 test('has no critical accessibility violations', async ({ page }) => {
   await page.goto('/')
   const results = await new AxeBuilder({ page }).analyze()
