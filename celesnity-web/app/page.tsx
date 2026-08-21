@@ -16,6 +16,14 @@ const platformPhases = [
 
 export default function HomePage() {
   return (
+    <div className="blueprint-theme">
+      <HomePageContent />
+    </div>
+  )
+}
+
+function HomePageContent() {
+  return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <MotionProvider />
@@ -184,7 +192,7 @@ export default function HomePage() {
         </section>
 
         <section id="contact" className="final-cta">
-          <Image src="/artwork/alignment.png" alt="" fill sizes="100vw" className="final-art" />
+          <Image src="/artwork-blueprint/contact.png" alt="" fill sizes="100vw" className="final-art" />
           <div className="final-overlay" />
           <div className="final-grain" />
           <div className="site-frame final-content" data-reveal>

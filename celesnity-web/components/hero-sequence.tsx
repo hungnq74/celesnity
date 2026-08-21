@@ -101,11 +101,6 @@ export function HeroSequence() {
               <div data-hero-copy className="hero-beat-copy">
                 <p className="utility-label utility-label--light">{beat.label}</p>
                 <h1>{beat.title}</h1>
-                {beat.signals && (
-                  <div className="signal-list" aria-label="Factory signals">
-                    {beat.signals.map((signal) => <span key={signal}>{signal}</span>)}
-                  </div>
-                )}
                 {beat.body && <p className="hero-support">{beat.body}</p>}
                 {beat.id === 'alignment' && (
                   <div className="hero-layer-overview" aria-label="Minder system overview">

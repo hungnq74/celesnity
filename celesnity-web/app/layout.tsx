@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-import { Libre_Caslon_Display, Roboto_Mono } from 'next/font/google'
+import { Instrument_Sans, Libre_Caslon_Display } from 'next/font/google'
 import './globals.css'
 
 const inter = localFont({
@@ -18,7 +18,7 @@ const display = Libre_Caslon_Display({
   display: 'swap',
 })
 
-const mono = Roboto_Mono({
+const mono = Instrument_Sans({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
@@ -37,17 +37,17 @@ export const metadata: Metadata = {
     siteName: 'Celesnity',
     title: 'Industrial intelligence for the physical world',
     description: 'Platform to coordinate. Hardware to stay present. A world model that learns.',
-    images: [{ url: '/og.png', width: 1672, height: 941, alt: 'Celesnity celestial field' }],
+    images: [{ url: '/artwork-blueprint/story-context.png', width: 1536, height: 1024, alt: 'Celesnity industrial intelligence blueprint' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industrial intelligence for the physical world',
     description: 'Platform to coordinate. Hardware to stay present. A world model that learns.',
-    images: ['/og.png'],
+    images: ['/artwork-blueprint/story-context.png'],
   },
 }
 
-export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#030813' }
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#071735' }
 
 const jsonLd = {
   '@context': 'https://schema.org',

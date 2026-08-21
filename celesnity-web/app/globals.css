@@ -68,7 +68,7 @@ button { color: inherit; }
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.67rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -234,18 +234,6 @@ h2 em { font-weight: 400; }
 }
 .hero-layer-overview strong { font-family:var(--font-instrument),serif; font-size:clamp(1.25rem,1.7vw,1.8rem); font-weight:400; line-height:1.05; }
 .hero-layer-overview small { margin-top:8px; color:rgba(255,255,255,.8); font-size:.72rem; }
-.signal-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 3px 0 25px; }
-.signal-list span {
-  padding: 8px 11px;
-  border: 1px solid rgba(255,255,255,.34);
-  border-radius: 999px;
-  color: rgba(255,255,255,.86);
-  background:rgba(2,8,18,.2);
-  font-family: var(--font-mono), monospace;
-  font-size: .62rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
 .hero-index { position: absolute; z-index: 6; right: 34px; bottom: 28px; }
 
 /* Dark reveal */
@@ -606,7 +594,7 @@ h2 em { font-weight: 400; }
 .final-overlay { position:absolute; inset:0; z-index:-2; background:linear-gradient(90deg,rgba(1,5,14,.95),rgba(2,8,18,.68) 48%,rgba(3,12,26,.26)),linear-gradient(0deg,rgba(1,5,14,.78),transparent 55%); }
 .final-grain { z-index:-1; }
 .final-content { padding-block:140px 90px; }
-.final-content h2 { margin:28px 0 30px; font-size:clamp(5rem,10vw,12rem); line-height:.78; }
+.final-content h2 { margin:28px 0 30px; font-size:clamp(3.5rem,5.15vw,6.15rem); line-height:.94; }
 .final-content h2 em { color:#70d8e4; font-weight:400; }
 .final-content > p:not(.utility-label) { max-width:530px; color:rgba(255,255,255,.7); font-size:1.12rem; line-height:1.7; }
 .final-actions { display:flex; align-items:center; gap:32px; margin-top:44px; }
@@ -623,7 +611,7 @@ h2 em { font-weight: 400; }
 .footer-contact a { display:block; margin-top:18px; font-family:var(--font-instrument),serif; font-size:2rem; border-bottom:1px solid currentColor; }
 .footer-legal { grid-column:1/-1; margin:70px 0 0; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-family:var(--font-mono),monospace; font-size:.58rem; letter-spacing:.08em; text-transform:uppercase; }
 
-/* Blueprint artwork study — isolated from the celestial checkpoint */
+/* Celesnity blueprint theme */
 .blueprint-theme {
   --night: #071735;
   --night-soft: #0a2048;
@@ -666,7 +654,6 @@ h2 em { font-weight: 400; }
   background: radial-gradient(390px circle at var(--pointer-x) var(--pointer-y), rgba(255, 93, 24, .14), transparent 64%);
 }
 .blueprint-theme .hero-grain { opacity: .07; mix-blend-mode: multiply; }
-.blueprint-theme .signal-list span { border-color: rgba(247, 243, 233, .46); background: rgba(7, 23, 53, .46); }
 .blueprint-theme .hero-layer-overview { border-color: rgba(247, 243, 233, .48); background: rgba(7, 23, 53, .52); backdrop-filter: blur(7px); }
 .blueprint-theme .hero-layer-overview > div { border-color: rgba(247, 243, 233, .34); background:rgba(7,23,53,.14); }
 .blueprint-theme .hero-layer-overview span { color: #ff7b3d; }
@@ -826,8 +813,6 @@ h2 em { font-weight: 400; }
   .research-card h3 { font-size:clamp(2.25rem,12vw,3.3rem); }
   .research-card p { font-size:.82rem; }
   .button { min-width:100%; min-height:56px; }
-  .signal-list { gap:5px; }
-  .signal-list span { padding:6px 8px; font-size:.52rem; }
   .hero-index { display:none; }
   .blueprint-theme .final-cta { background-position: 65% center; }
   .blueprint-theme .final-overlay {
@@ -867,7 +852,7 @@ h2 em { font-weight: 400; }
   .hardware-signal--vision { right:0; }
   .partner-wall { grid-template-columns:repeat(2,1fr); }
   .partner-mark { min-height:112px; padding:14px; }
-  .final-content h2 { font-size:clamp(5rem,23vw,7.4rem); }
+  .final-content h2 { font-size:clamp(3rem,12vw,4rem); line-height:.94; }
   .final-actions { flex-direction:column; align-items:stretch; }
   .text-link { justify-content:space-between; }
   .footer-grid { grid-template-columns:1fr; }

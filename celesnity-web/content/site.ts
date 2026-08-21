@@ -6,7 +6,6 @@ export type HeroBeat = {
   title: string
   body?: string
   artwork: string
-  signals?: readonly string[]
   cta?: { label: string; href: string }
 }
 
@@ -56,7 +55,7 @@ export const landingContent: LandingContent = {
       label: 'CELESNITY / INDUSTRIAL INTELLIGENCE',
       title: 'Industrial intelligence for the physical world.',
       body: 'Every factory is full of signals. Minder turns them into shared direction.',
-      artwork: '/artwork/origin.png',
+      artwork: '/artwork-blueprint/story-context.png',
       cta: { label: 'See Minder on your floor', href: '#contact' },
     },
     {
@@ -64,14 +63,13 @@ export const landingContent: LandingContent = {
       label: 'THE OPERATION / AS IT IS',
       title: 'The signal is everywhere. The context is nowhere.',
       body: 'Critical knowledge is scattered across software, documents and human memory.',
-      artwork: '/artwork/drift.png',
-      signals: ['Machines', 'Materials', 'Systems', 'People', 'Decisions'],
+      artwork: '/artwork-blueprint/story-origin.png',
     },
     {
       id: 'alignment',
       label: 'THE MINDER SYSTEM',
       title: 'How Minder is built.',
-      artwork: '/artwork/alignment.png',
+      artwork: '/artwork-blueprint/story-alignment.png',
     },
   ],
   layers: [
