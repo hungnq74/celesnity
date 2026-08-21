@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { HeroSequence } from '@/components/hero-sequence'
+import { HardwareOrbitMark } from '@/components/hardware-orbit-mark'
+import { HardwareSequenceMotion } from '@/components/hardware-sequence-motion'
 import { MinderSystemMap } from '@/components/minder-system-map'
 import { MotionProvider } from '@/components/motion-provider'
 import { SiteHeader } from '@/components/site-header'
@@ -50,7 +52,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="hardware" className="hardware-section dark-section section-pad">
+        <section id="hardware" className="hardware-section dark-section section-pad hardware-sequence-section">
           <div className="site-frame">
             <div className="product-heading product-heading--dark" data-reveal>
               <p className="utility-label utility-label--lime">02 / INTERFACE</p>
@@ -63,18 +65,30 @@ export default function HomePage() {
                 <small>Existing devices first. Purpose-built hardware where the floor needs it.</small>
               </div>
               <div className="hardware-visual" data-reveal aria-hidden="true">
+                <Image
+                  src="/artwork-blueprint/hardware-sensor-field.png"
+                  alt=""
+                  fill
+                  sizes="(max-width: 820px) 100vw, 58vw"
+                  className="hardware-artwork hardware-artwork--sensor"
+                />
+                <Image
+                  src="/artwork-blueprint/hardware-orbit-field.png"
+                  alt=""
+                  fill
+                  sizes="(max-width: 820px) 100vw, 58vw"
+                  className="hardware-artwork hardware-artwork--orbit"
+                />
                 <div className="hardware-ring hardware-ring--outer" />
                 <div className="hardware-ring hardware-ring--middle" />
-                <div className="hardware-core">
-                  <Image src="/brand/orbit-white.png" alt="" width={110} height={110} />
-                  <i />
-                </div>
+                <HardwareOrbitMark />
                 <span className="hardware-signal hardware-signal--voice">VOICE</span>
                 <span className="hardware-signal hardware-signal--vision">VISION</span>
                 <span className="hardware-signal hardware-signal--edge">EDGE</span>
               </div>
             </div>
           </div>
+          <HardwareSequenceMotion />
         </section>
 
         <section id="research" className="research-section section-pad">
