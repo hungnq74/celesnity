@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { HeroSequence } from '@/components/hero-sequence'
 import { HardwareOrbitMark } from '@/components/hardware-orbit-mark'
 import { HardwareSequenceMotion } from '@/components/hardware-sequence-motion'
+import { IntroSequence } from '@/components/intro-sequence'
 import { MinderSystemMap } from '@/components/minder-system-map'
 import { MotionProvider } from '@/components/motion-provider'
 import { PlatformStoryMotion } from '@/components/platform-story-motion'
@@ -25,6 +26,7 @@ export default function HomePage() {
 function HomePageContent() {
   return (
     <>
+      <IntroSequence />
       <a className="skip-link" href="#main">Skip to content</a>
       <MotionProvider />
       <SiteHeader />

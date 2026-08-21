@@ -59,6 +59,102 @@ button { color: inherit; }
 }
 .skip-link:focus { transform: translateY(0); }
 
+/* Opening sequence */
+html.intro-active,
+html.intro-active body { overflow:hidden; }
+.intro-sequence {
+  position:fixed;
+  inset:0;
+  z-index:180;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:#071735;
+  color:#f7f3e9;
+  animation:intro-sequence-in 1.15s var(--ease) both;
+  pointer-events:auto;
+}
+.intro-sequence-art,
+.intro-sequence-wash,
+.intro-sequence-orbit,
+.intro-sequence-rule { position:absolute; }
+.intro-sequence-art {
+  z-index:-3;
+  object-fit:cover;
+  opacity:0;
+  transform:scale(1.07);
+  animation:intro-art-in 1.8s .08s var(--ease) both;
+}
+.intro-sequence-wash {
+  z-index:-2;
+  inset:0;
+  background:
+    radial-gradient(46% 54% at 50% 48%, rgba(247,243,233,.1), transparent 72%),
+    linear-gradient(180deg, rgba(7,23,53,.12), rgba(7,23,53,.22));
+  mix-blend-mode:soft-light;
+}
+.intro-sequence-orbit {
+  z-index:-1;
+  width:min(68vw, 780px);
+  aspect-ratio:1.42;
+  border:1px solid rgba(247,243,233,.34);
+  border-radius:50%;
+  transform:translateY(4%) rotate(-17deg) scale(.7);
+  opacity:0;
+  animation:intro-orbit-in 1.8s .28s var(--ease) both;
+}
+.intro-sequence-orbit::after {
+  content:"";
+  position:absolute;
+  inset:13% 10%;
+  border:1px solid rgba(255,104,31,.32);
+  border-radius:50%;
+  transform:rotate(23deg);
+}
+.intro-sequence-mark {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  opacity:0;
+  transform:translateY(18px);
+  animation:intro-mark-in 1.1s .62s var(--ease) both;
+}
+.intro-sequence-mark img {
+  width:clamp(58px, 6vw, 84px);
+  height:auto;
+  object-fit:contain;
+}
+.intro-sequence-mark span {
+  font-size:clamp(.68rem, .85vw, .84rem);
+  font-weight:650;
+  letter-spacing:.28em;
+  text-indent:.28em;
+}
+.intro-sequence-rule {
+  left:50%;
+  bottom:11.5vh;
+  width:0;
+  height:1px;
+  background:rgba(247,243,233,.7);
+  transform:translateX(-50%);
+  animation:intro-rule-in .9s 1.08s var(--ease) both;
+}
+.intro-sequence.is-exiting {
+  animation:intro-sequence-out 1s cubic-bezier(.76,0,.24,1) both;
+  pointer-events:none;
+}
+@keyframes intro-sequence-in { from { opacity:0; } to { opacity:1; } }
+@keyframes intro-art-in { from { opacity:0; transform:scale(1.07); } to { opacity:1; transform:scale(1); } }
+@keyframes intro-orbit-in { from { opacity:0; transform:translateY(4%) rotate(-17deg) scale(.7); } to { opacity:.72; transform:translateY(4%) rotate(-17deg) scale(1); } }
+@keyframes intro-mark-in { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes intro-rule-in { from { width:0; opacity:0; } to { width:min(18vw, 220px); opacity:1; } }
+@keyframes intro-sequence-out { from { opacity:1; transform:scale(1); } to { opacity:0; transform:scale(1.025); } }
+@media (prefers-reduced-motion: reduce) {
+  .intro-sequence { display:none; }
+}
+
 .site-frame { width: var(--frame); margin-inline: auto; }
 .section-pad { padding-block: clamp(90px, 9vw, 140px); }
 
