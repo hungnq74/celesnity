@@ -223,7 +223,7 @@ function HomePageContent() {
             <span className="utility-label">START A CONVERSATION</span>
             <a href={contactMailto}>start@celesnity.com</a>
           </div>
-          <p className="footer-legal">© {new Date().getFullYear()} Celesnity. Human control, by design.</p>
+          <p className="footer-legal">© 2026 Celesnity Ltd</p>
         </div>
       </footer>
     </>
