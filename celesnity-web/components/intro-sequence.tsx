@@ -38,12 +38,12 @@ export function IntroSequence() {
         preload
       />
       <div className="intro-sequence-wash" />
+      <div className="intro-sequence-grain" />
       <div className="intro-sequence-orbit" />
       <div className="intro-sequence-mark">
         <Image src="/brand/orbit-white.png" alt="" width={84} height={84} loading="eager" />
         <span>CELESNITY</span>
       </div>
-      <div className="intro-sequence-rule" />
     </div>
   )
 }
