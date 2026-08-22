@@ -592,10 +592,10 @@ h2 em { font-weight: 400; }
 .platform-field-axis { position:absolute; background:rgba(18,58,122,.18); }
 .platform-field-axis--horizontal { left:8%; right:7%; top:54%; height:1px; }
 .platform-field-axis--vertical { top:15%; bottom:13%; left:50%; width:1px; }
-.platform-field-contours { position:absolute; width:480px; height:230px; border:1px solid rgba(39,82,255,.2); border-radius:50%; transform:rotate(-17deg); }
+.platform-field-contours { position:absolute; width:480px; height:230px; border:1px solid rgba(39,82,255,.2); border-radius:50%; left:50%; top:54%; transform:translate(-50%, -50%) rotate(-17deg); transform-origin:center; }
 .platform-field-contours::before,.platform-field-contours::after { content:""; position:absolute; inset:18px; border:1px solid rgba(39,82,255,.15); border-radius:50%; }
-.platform-field-contours--one { left:48%; top:34%; box-shadow:0 0 0 20px rgba(39,82,255,.035),0 0 0 40px rgba(39,82,255,.028),0 0 0 60px rgba(39,82,255,.022); }
-.platform-field-contours--two { left:56%; top:42%; width:290px; height:150px; border-color:rgba(255,104,31,.28); transform:rotate(18deg); }
+.platform-field-contours--one { box-shadow:0 0 0 20px rgba(39,82,255,.035),0 0 0 40px rgba(39,82,255,.028),0 0 0 60px rgba(39,82,255,.022); }
+.platform-field-contours--two { width:290px; height:150px; border-color:rgba(255,104,31,.28); transform:translate(-50%, -50%) rotate(18deg); }
 .platform-field-beam { position:absolute; left:8%; top:54%; width:84%; height:2px; background:linear-gradient(90deg,transparent,rgba(39,82,255,.22) 11%,var(--cobalt) 50%,rgba(255,104,31,.65) 89%,transparent); transform-origin:left; transform:scaleX(var(--story-beam,.5)); transition:transform .35s ease; }
 .platform-field-signal { position:absolute; left:var(--story-position,8%); top:calc(54% - 8px); display:grid; width:17px; height:17px; place-items:center; border:1px solid var(--cobalt); border-radius:50%; background:#f5f7fc; box-shadow:0 0 0 8px rgba(39,82,255,.08),0 0 25px rgba(39,82,255,.32); transform:translateX(-50%); transition:left .45s var(--ease); }
 .platform-field-signal i { width:5px; height:5px; border-radius:50%; background:var(--cobalt); }
@@ -746,6 +746,11 @@ h2 em { font-weight: 400; }
 .blueprint-theme .site-header:not(.site-header--paper) .brand-mark-ink { opacity: 0; }
 .blueprint-theme .site-header:not(.site-header--paper) .header-cta { border-color: rgba(255,255,255,.58); background:rgba(4,16,44,.62); }
 .blueprint-theme .site-header:not(.site-header--paper) .header-cta:hover { background:var(--lime); border-color:var(--lime); color:var(--ink); }
+.blueprint-theme .hero-frame { background-position: center; background-size: cover; }
+.blueprint-theme .hero-frame:nth-child(1) { background-image: url('/artwork-blueprint/hero-industrial-robot.png'); }
+.blueprint-theme .hero-frame:nth-child(2) { background-image: url('/artwork-blueprint/story-origin.webp'); }
+.blueprint-theme .hero-frame:nth-child(3) { background-image: url('/artwork-blueprint/story-alignment.webp'); }
+.blueprint-theme .hero-image { opacity: 0; }
 .blueprint-theme .hero-scrim {
   background:
     linear-gradient(90deg, rgba(4, 16, 44, .97) 0%, rgba(4, 17, 45, .91) 35%, rgba(4, 17, 45, .66) 58%, rgba(4, 17, 45, .2) 82%, transparent 100%),
@@ -930,8 +935,8 @@ h2 em { font-weight: 400; }
   .platform-story-intro h3 { font-size:clamp(3.3rem,15vw,5rem); }
   .platform-field { min-height:350px; }
   .platform-field-readout { left:6%; top:10%; }
-  .platform-field-contours--one { left:25%; top:35%; width:360px; }
-  .platform-field-contours--two { left:44%; top:43%; width:220px; }
+  .platform-field-contours--one { width:360px; }
+  .platform-field-contours--two { width:220px; }
   .platform-field-legend { right:6%; bottom:7%; flex-direction:column; gap:7px; }
   .platform-spectrum { margin-top:96px; }
   .platform-spectrum-intro h3 { font-size:clamp(3.3rem,15vw,5rem); }
@@ -954,6 +959,68 @@ h2 em { font-weight: 400; }
   .text-link { justify-content:space-between; }
   .footer-grid { grid-template-columns:1fr; }
   .footer-contact a { font-size:1.55rem; }
+}
+
+/* Keep the end-to-end system diagram legible as one desktop viewport. */
+@media (min-width: 821px) {
+  .system-map-section {
+    scroll-margin-top: 78px;
+    padding-block: clamp(10px, 1.4vh, 16px);
+    padding-top: clamp(72px, 10vh, 84px);
+  }
+  .system-map-heading {
+    grid-template-columns: minmax(150px, .38fr) 1.62fr;
+    gap: clamp(28px, 4vw, 64px);
+    margin-bottom: clamp(14px, 2vh, 22px);
+  }
+  .system-map-heading h2 {
+    margin-bottom: 6px;
+    font-size: clamp(2.55rem, 4.1vw, 4.7rem);
+  }
+  .system-map-heading div > p {
+    max-width: 620px;
+    font-size: clamp(.74rem, .9vw, .88rem);
+    line-height: 1.3;
+  }
+  .system-map {
+    padding: clamp(9px, 1vw, 13px);
+  }
+  .system-map-audience {
+    margin-bottom: clamp(15px, 2vh, 22px);
+    padding: 6px 12px;
+  }
+  .system-map-audience::after,
+  .system-map-node--hardware::after,
+  .system-map-node--platform::after {
+    height: clamp(15px, 2vh, 22px);
+  }
+  .system-map-audience > div { margin-top: 4px; }
+  .system-map-audience > div span { padding: 4px 8px; }
+  .system-map-node {
+    min-height: 0;
+    padding: clamp(12px, 1.1vw, 16px);
+  }
+  .system-map-node-head {
+    min-height: 58px;
+    padding-bottom: 8px;
+  }
+  .system-map-node-head span { margin-bottom: 6px; }
+  .system-map-node-head strong { font-size: clamp(1.4rem, 1.65vw, 2rem); }
+  .system-map-node > p { margin: 8px 0 10px; font-size: .68rem; }
+  .system-map-node ul { gap: 5px; }
+  .system-map-node li { padding: 5px 7px; font-size: .52rem; }
+  .system-map-platform-layers { gap: 4px; }
+  .system-map-platform-layers > div { padding: 6px 8px; }
+  .system-map-platform-layers span { margin-bottom: 2px; }
+  .system-map-platform-layers p { font-size: .58rem; line-height: 1.3; }
+  .system-map-approval { gap: 6px; margin-top: 6px; font-size: .52rem; }
+  .system-map-connector { gap: 8px; font-size: .5rem; }
+  .system-map-floor { margin-top: clamp(15px, 2vh, 22px); }
+  .system-map-floor-label { padding: 6px 10px; }
+  .system-map-floor-grid > div { min-height: 38px; padding: 6px 9px; }
+  .system-map-floor-grid span { margin-bottom: 3px; }
+  .system-map-floor-grid strong { font-size: clamp(.95rem, 1.1vw, 1.2rem); }
+  .system-map-loop { margin-top: 5px; padding: 5px 9px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

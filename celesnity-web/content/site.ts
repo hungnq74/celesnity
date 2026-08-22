@@ -55,7 +55,7 @@ export const landingContent: LandingContent = {
       label: 'CELESNITY / INDUSTRIAL INTELLIGENCE',
       title: 'Industrial intelligence for the physical world.',
       body: 'Every factory is full of signals. Minder turns them into shared direction.',
-      artwork: '/artwork-blueprint/story-context.webp',
+      artwork: '/artwork-blueprint/hero-industrial-robot.png',
       cta: { label: 'See Minder on your floor', href: '#contact' },
     },
     {
