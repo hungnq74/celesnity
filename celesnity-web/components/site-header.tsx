@@ -26,8 +26,8 @@ export function SiteHeader() {
     <header className={`site-header ${paper ? 'site-header--paper' : ''}`}>
       <a className="brand-lockup" href="#top" aria-label="Celesnity home">
         <span className="brand-mark">
-          <Image className="brand-mark-white" src="/brand/orbit-white.png" alt="" width={40} height={40} priority />
-          <Image className="brand-mark-ink" src="/brand/orbit-ink.png" alt="" width={40} height={40} priority />
+          <Image className="brand-mark-white" src="/brand/orbit-white.png" alt="" width={40} height={40} loading="eager" />
+          <Image className="brand-mark-ink" src="/brand/orbit-ink.png" alt="" width={40} height={40} loading="eager" />
         </span>
         <span>CELESNITY</span>
       </a>

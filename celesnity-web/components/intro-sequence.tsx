@@ -31,16 +31,16 @@ export function IntroSequence() {
     <div className={`intro-sequence ${exiting ? 'is-exiting' : ''}`} aria-hidden="true">
       <Image
         className="intro-sequence-art"
-        src="/artwork-blueprint/intro-field-natural.png"
+        src="/artwork-blueprint/intro-field-natural.webp"
         alt=""
         fill
         sizes="100vw"
-        priority
+        preload
       />
       <div className="intro-sequence-wash" />
       <div className="intro-sequence-orbit" />
       <div className="intro-sequence-mark">
-        <Image src="/brand/orbit-white.png" alt="" width={84} height={84} priority />
+        <Image src="/brand/orbit-white.png" alt="" width={84} height={84} loading="eager" />
         <span>CELESNITY</span>
       </div>
       <div className="intro-sequence-rule" />

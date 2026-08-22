@@ -1,11 +1,22 @@
 'use client'
 
 import Image from 'next/image'
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { landingContent } from '@/content/site'
 
 export function HeroSequence() {
   const sectionRef = useRef<HTMLElement>(null)
+  // The three frames all sit at inset:0 inside the sticky stage, so the browser
+  // treats every one of them as in-viewport and fetches all three at once. Only
+  // the first frame is visible on arrival, so the other two wait their turn.
+  const [laterFramesReady, setLaterFramesReady] = useState(false)
+
+  useEffect(() => {
+    // A decode served straight from cache can skip onLoad, so never let the
+    // remaining frames depend on that event alone.
+    const timer = window.setTimeout(() => setLaterFramesReady(true), 2500)
+    return () => window.clearTimeout(timer)
+  }, [])
 
   useLayoutEffect(() => {
     const section = sectionRef.current
@@ -80,14 +91,18 @@ export function HeroSequence() {
         <div className="hero-art" aria-hidden="true">
           {landingContent.hero.map((beat, index) => (
             <div key={beat.id} data-hero-frame className="hero-frame">
-              <Image
-                src={beat.artwork}
-                alt=""
-                fill
-                sizes="100vw"
-                priority={index === 0}
-                className="hero-image"
-              />
+              {(index === 0 || laterFramesReady) && (
+                <Image
+                  src={beat.artwork}
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  onLoad={index === 0 ? () => setLaterFramesReady(true) : undefined}
+                  className="hero-image"
+                />
+              )}
             </div>
           ))}
           <div className="hero-scrim" />

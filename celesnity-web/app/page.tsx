@@ -113,14 +113,14 @@ function HomePageContent() {
               </div>
               <div className="hardware-visual" data-reveal aria-hidden="true">
                 <Image
-                  src="/artwork-blueprint/hardware-sensor-field.png"
+                  src="/artwork-blueprint/hardware-sensor-field.webp"
                   alt=""
                   fill
                   sizes="(max-width: 820px) 100vw, 58vw"
                   className="hardware-artwork hardware-artwork--sensor"
                 />
                 <Image
-                  src="/artwork-blueprint/hardware-orbit-field.png"
+                  src="/artwork-blueprint/hardware-orbit-field.webp"
                   alt=""
                   fill
                   sizes="(max-width: 820px) 100vw, 58vw"
@@ -194,7 +194,7 @@ function HomePageContent() {
         </section>
 
         <section id="contact" className="final-cta">
-          <Image src="/artwork-blueprint/contact.png" alt="" fill sizes="100vw" className="final-art" />
+          <Image src="/artwork-blueprint/contact.webp" alt="" fill sizes="100vw" className="final-art" />
           <div className="final-overlay" />
           <div className="final-grain" />
           <div className="site-frame final-content" data-reveal>

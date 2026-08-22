@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     siteName: 'Celesnity',
     title: 'Industrial intelligence for the physical world',
     description: 'Platform to coordinate. Hardware to stay present. A world model that learns.',
-    images: [{ url: '/artwork-blueprint/story-context.png', width: 1536, height: 1024, alt: 'Celesnity industrial intelligence blueprint' }],
+    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: 'Celesnity industrial intelligence blueprint' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industrial intelligence for the physical world',
     description: 'Platform to coordinate. Hardware to stay present. A world model that learns.',
-    images: ['/artwork-blueprint/story-context.png'],
+    images: ['/og.jpg'],
   },
 }
 

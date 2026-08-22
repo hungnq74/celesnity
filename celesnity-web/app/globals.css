@@ -743,11 +743,6 @@ h2 em { font-weight: 400; }
 .blueprint-theme .site-header:not(.site-header--paper) .brand-mark-ink { opacity: 0; }
 .blueprint-theme .site-header:not(.site-header--paper) .header-cta { border-color: rgba(255,255,255,.58); background:rgba(4,16,44,.62); }
 .blueprint-theme .site-header:not(.site-header--paper) .header-cta:hover { background:var(--lime); border-color:var(--lime); color:var(--ink); }
-.blueprint-theme .hero-frame { background-position: center; background-size: cover; }
-.blueprint-theme .hero-frame:nth-child(1) { background-image: url('/artwork-blueprint/story-context.png'); }
-.blueprint-theme .hero-frame:nth-child(2) { background-image: url('/artwork-blueprint/story-origin.png'); }
-.blueprint-theme .hero-frame:nth-child(3) { background-image: url('/artwork-blueprint/story-alignment.png'); }
-.blueprint-theme .hero-image { opacity: 0; }
 .blueprint-theme .hero-scrim {
   background:
     linear-gradient(90deg, rgba(4, 16, 44, .97) 0%, rgba(4, 17, 45, .91) 35%, rgba(4, 17, 45, .66) 58%, rgba(4, 17, 45, .2) 82%, transparent 100%),
@@ -798,11 +793,7 @@ h2 em { font-weight: 400; }
 .blueprint-theme .final-cta {
   color: var(--ink);
   background-color: var(--paper-raised);
-  background-image: url('/artwork-blueprint/contact.png');
-  background-position: center;
-  background-size: cover;
 }
-.blueprint-theme .final-art { opacity: 0; }
 .blueprint-theme .final-overlay {
   background:
     linear-gradient(90deg, rgba(247, 243, 233, .99) 0%, rgba(247, 243, 233, .91) 37%, rgba(247, 243, 233, .2) 68%, transparent 100%),
@@ -917,7 +908,7 @@ h2 em { font-weight: 400; }
   .research-card p { font-size:.82rem; }
   .button { min-width:100%; min-height:56px; }
   .hero-index { display:none; }
-  .blueprint-theme .final-cta { background-position: 65% center; }
+  .blueprint-theme .final-art { object-position: 65% center; }
   .blueprint-theme .final-overlay {
     background: linear-gradient(0deg, rgba(247,243,233,.98) 0%, rgba(247,243,233,.86) 57%, rgba(247,243,233,.18) 100%);
   }
