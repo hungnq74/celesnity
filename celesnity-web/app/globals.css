@@ -694,12 +694,6 @@ h2 em { font-weight: 400; }
 .partner-mark--barclays:hover { color:#00aeef; }
 .partner-mark--natwest span { font-size:1.25rem; font-weight:800; }
 .partner-mark--natwest:hover { color:#5a287d; }
-.partner-mark--google span { font-size:1.35rem; font-weight:700; letter-spacing:-.04em; }
-.partner-mark--google:hover { color:#4285f4; }
-.partner-mark--aws span { font-size:1.35rem; font-weight:850; letter-spacing:-.05em; }
-.partner-mark--aws:hover { color:#ff9900; }
-.partner-mark--cloudflare span { font-size:1.08rem; font-weight:750; letter-spacing:-.03em; }
-.partner-mark--cloudflare:hover { color:#f38020; }
 /* Final */
 .final-cta { position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; isolation:isolate; }
 .final-art { z-index:-3; object-fit:cover; object-position:center; }

@@ -26,7 +26,7 @@ describe('public landing content', () => {
     ])
     expect(landingContent.partners.map((item) => item.name)).toEqual([
       'SIHUB', 'HUEIDS', 'Silicon Valley Fellowship', 'NVIDIA Inception',
-      'Barclays Eagle Labs', 'NatWest Accelerator', 'Google', 'AWS', 'Cloudflare',
+      'Barclays Eagle Labs', 'NatWest Accelerator',
     ])
     expect(landingContent.research.at(-1)?.title).toBe('World model')
   })
